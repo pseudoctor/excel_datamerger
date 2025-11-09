@@ -163,10 +163,10 @@ class ExcelMergerGUI:
 
         # 文件预览区
         preview_frame = tk.LabelFrame(self.root, text="👁 文件预览（前5行）", font=("Helvetica", 11, "bold"))
-        preview_frame.pack(fill=tk.BOTH, padx=10, pady=5, expand=True)
-        self.preview_text = tk.Text(preview_frame, height=8, wrap="none", font=("Consolas", 9),
+        preview_frame.pack(fill=tk.BOTH, padx=10, pady=5, expand=False)
+        self.preview_text = tk.Text(preview_frame, height=3, wrap="none", font=("Consolas", 9),
                                     bg="#1e1e1e", fg="white")
-        self.preview_text.pack(fill=tk.BOTH, expand=True)
+        self.preview_text.pack(fill=tk.BOTH, expand=False)
 
         # 列选择区
         column_frame = tk.LabelFrame(self.root, text="📋 列选择（勾选要删除的列）",
@@ -205,7 +205,7 @@ class ExcelMergerGUI:
         list_container.pack(fill=tk.BOTH, expand=False, padx=5, pady=5)
 
         # 创建Canvas和Scrollbar
-        canvas = tk.Canvas(list_container, height=150, bg="#1e1e1e", highlightthickness=0)
+        canvas = tk.Canvas(list_container, height=60, bg="#1e1e1e", highlightthickness=0)
         scrollbar = tk.Scrollbar(list_container, command=canvas.yview)
         self.column_selection_frame = tk.Frame(canvas, bg="#1e1e1e")
 
@@ -243,7 +243,7 @@ class ExcelMergerGUI:
         # 日志显示区
         log_frame = tk.LabelFrame(self.root, text="📜 实时日志", font=("Helvetica", 11, "bold"))
         log_frame.pack(fill=tk.BOTH, padx=10, pady=5, expand=True)
-        self.log_text = tk.Text(log_frame, height=8, wrap="word", font=("Consolas", 9),
+        self.log_text = tk.Text(log_frame, height=4, wrap="word", font=("Consolas", 9),
                                 bg="#1e1e1e", fg="#c5c5c5")
         self.log_text.pack(fill=tk.BOTH, expand=True)
 
